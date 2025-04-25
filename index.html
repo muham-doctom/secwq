@@ -1,5 +1,142 @@
+
 <!DOCTYPE html>
-<html>
-<head><title>Placeholder</title></head>
-<body>Hello World!</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Izaan's Ice Cream Paradise</title>
+    <link rel="stylesheet" href="design.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header>
+      <h1>🍨 Izaan's Ice Cream Paradise</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#flavors">Flavors</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+      <h2>Welcome to Izaan's Ice Cream Paradise!</h2>
+      <p>Explore our delicious world of ice creams, crafted with love and the finest ingredients to chill your soul and sweeten your day!</p>
+    </section>
+
+    <!-- Flavors Section -->
+    <section id="flavors" class="section">
+      <h2>Our Flavors</h2>
+      <div class="flavor-container">
+
+        <div class="flavor-card">
+          <h3>Vanilla</h3>
+          <p>Classic and creamy vanilla delight.</p>
+          <p>$3.00</p>
+          <button onclick="addToCart('Vanilla', 3)">Add to Cart</button>
+        </div>
+
+        <div class="flavor-card">
+          <h3>Chocolate</h3>
+          <p>Rich, deep cocoa for chocoholics.</p>
+          <p>$3.50</p>
+          <button onclick="addToCart('Chocolate', 3.5)">Add to Cart</button>
+        </div>
+
+        <div class="flavor-card">
+          <h3>Strawberry</h3>
+          <p>Sweet and fruity summer vibes.</p>
+          <p>$3.25</p>
+          <button onclick="addToCart('Strawberry', 3.25)">Add to Cart</button>
+        </div>
+
+        <div class="flavor-card">
+          <h3>Mango</h3>
+          <p>Tropical escape in every bite.</p>
+          <p>$3.75</p>
+          <button onclick="addToCart('Mango', 3.75)">Add to Cart</button>
+        </div>
+
+        <div class="flavor-card">
+          <h3>Mint Chocolate Chip</h3>
+          <p>Cool mint with crunchy choco chips.</p>
+          <p>$3.50</p>
+          <button onclick="addToCart('Mint Chocolate Chip', 3.5)">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Floating Cart Button -->
+      <button class="cart-btn" onclick="openCart()">🛒 View Cart</button>
+
+      <!-- Cart Modal -->
+      <div class="modal" id="cartModal">
+        <div class="modal-content">
+          <span class="close" onclick="closeCart()">&times;</span>
+          <h2>Your Cart</h2>
+          <div id="cartItems"></div>
+          <p id="cartTotal"><strong>Total: $0.00</strong></p>
+          <button onclick="openOrderForm()">Proceed to Order</button>
+        </div>
+      </div>
+
+      <!-- Order Modal -->
+      <div class="modal" id="orderModal">
+        <div class="modal-content">
+          <span class="close" onclick="closeOrderForm()">&times;</span>
+          <h2>Complete Your Order</h2>
+          <form id="orderForm">
+            <input type="text" id="orderName" placeholder="Name" required />
+            <input type="text" id="orderAddress" placeholder="Address" required />
+            <input type="email" id="orderEmail" placeholder="Email" required />
+            <button type="submit">Send Order</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <h2>About Us</h2>
+      <p>Izaan’s Ice Cream Paradise started with a dream to spread happiness through scoops. Every flavor is handpicked and every recipe crafted to perfection. We believe in joy, flavor, and family.</p>
+      <p>Learn more about our story on our <a href="https://example.com/about-us" target="_blank">About Page</a>.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <h2>Contact Us</h2>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Izaan's Ice Cream Paradise. All rights reserved.</p>
+    </footer>
+
+    <script>
+      (function(){
+          emailjs.init("NAzC-YRqZ49imKfBx");
+      })();
+    </script>
+    <script src="design.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+          emailjs.init({
+            publicKey: "NAzC-YRqZ49imKfBx",
+          });
+      })();
+    </script>
+  </body>
 </html>
